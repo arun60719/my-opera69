@@ -13,3 +13,7 @@ mongo = PyMongo(app)
 set_mongo(mongo)
 
 app.register_blueprint(user_bp, url_prefix="/api")
+
+from mongoengine import connect
+
+connect(db="your_db_name", host="your_mongodb_uri")
