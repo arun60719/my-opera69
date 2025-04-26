@@ -1,4 +1,5 @@
-Flask==2.2.5
-gunicorn
-flask-cors
+Flask
+Flask-Cors
+dnspython
 pymongo
+gunicorn
