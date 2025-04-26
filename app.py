@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 from ruotes import user_bp
 from models import set_mongo
 
-app = Flask(__name__)
+app = Flask(_name_)
 CORS(app)
 
 app.config["MONGO_URI"] = "mongodb+srv://g7317088:<db_password>@cluster0.ixsn5wd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
