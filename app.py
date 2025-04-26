@@ -1,19 +1,14 @@
 from flask import Flask
-from flask_cors import CORS
-from flask_pymongo import PyMongo
-from routes import user_bp
 from models import set_mongo
+from routes import user_bp
 
 app = Flask(__name__)
-CORS(app)
 
-app.config["MONGO_URI"] = "mongodb+srv://g7317088:<db_password>@cluster0.ixsn5wd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+app.config["MONGO_URI"] = "mongodb+srv://g7317088:ffffDDD5555@cluster0.ixsn5wd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
-mongo = PyMongo(app)
-set_mongo(mongo)
+set_mongo(app)
 
-app.register_blueprint(user_bp, url_prefix="/api")
+app.register_blueprint(user_bp)
 
-from mongoengine import connect
-
-connect(db="your_db_name", host="your_mongodb_uri")
+if __name__ == '_main_':
+    app.run(host="0.0.0.0",port=5000)
